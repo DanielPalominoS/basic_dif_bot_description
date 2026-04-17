@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot name="dif_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Args -->
+  <xacro:arg name="use_ros2_control" default="false"/>
+  <xacro:arg name="ros_distro" default="iron"/>
+
+  <!-- URDF físico del robot (links, joints, inertias, colisiones) -->
+  <xacro:include filename="robot.urdf.xacro"/>
+
+  <!-- Sensores físicos (frames, links de sensores) -->
+  <!-- <xacro:include filename="sensors.xacro"/> -->
+
+  <!-- Plugins de sensores para GZ -->
+  <xacro:include filename="gz_sensors.xacro"/>
+
+  <!-- Control diferencial: GZ puro o ros2_control -->
+  <xacro:if value="$(arg use_ros2_control)">
+    <xacro:include filename="ros2_control.xacro"/>
+    <xacro:ros2_control_block/>
+  </xacro:if>
+
+  <xacro:unless value="$(arg use_ros2_control)">
+    <xacro:include filename="gz_control.xacro"/>
+  </xacro:unless>
+
+</robot>

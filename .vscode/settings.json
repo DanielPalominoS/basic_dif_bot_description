@@ -1,0 +1,22 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/dsps/ROS/ros2_ws/install/my_first_py_pkg/lib/python3.10/site-packages",
+        "/home/dsps/ROS/ros2_ws/install/learning_tf2_py/lib/python3.10/site-packages",
+        "/home/dsps/ROS/ros2_ws/install/custom_interfaces_tut/lib/python3.10/site-packages",
+        "/home/dsps/ROS/ros2_ws/install/autonomous_tb3/lib/python3.10/site-packages",
+        "/home/dsps/ROS/rros_project_ws/install/tb3ps/lib/python3.10/site-packages",
+        "/home/dsps/ROS/rros_project_ws/install/prj_rros/lib/python3.10/site-packages",
+        "/home/dsps/ROS/rros_project_ws/install/custom_msgs_srvs/lib/python3.10/site-packages",
+        "/opt/ros/iron/lib/python3.10/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/dsps/ROS/ros2_ws/install/my_first_py_pkg/lib/python3.10/site-packages",
+        "/home/dsps/ROS/ros2_ws/install/learning_tf2_py/lib/python3.10/site-packages",
+        "/home/dsps/ROS/ros2_ws/install/custom_interfaces_tut/lib/python3.10/site-packages",
+        "/home/dsps/ROS/ros2_ws/install/autonomous_tb3/lib/python3.10/site-packages",
+        "/home/dsps/ROS/rros_project_ws/install/tb3ps/lib/python3.10/site-packages",
+        "/home/dsps/ROS/rros_project_ws/install/prj_rros/lib/python3.10/site-packages",
+        "/home/dsps/ROS/rros_project_ws/install/custom_msgs_srvs/lib/python3.10/site-packages",
+        "/opt/ros/iron/lib/python3.10/site-packages"
+    ]
+}
