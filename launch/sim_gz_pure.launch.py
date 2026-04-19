@@ -50,15 +50,18 @@ def generate_launch_description():
             "/joint_states@sensor_msgs/msg/JointState[gz.msgs.Model",
 
             # Comandos de velocidad
-            '/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist',
+            "/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist",
 
             # Odometría
-            '/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry',
+            "/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry",
 
             # Sensores
-            '/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
-            '/imu@sensor_msgs/msg/Imu[gz.msgs.IMU',
-            '/camera/image@sensor_msgs/msg/Image[gz.msgs.Image',
+            "/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan",
+            "/imu@sensor_msgs/msg/Imu[gz.msgs.IMU",
+            "/camera@sensor_msgs/msg/Image[gz.msgs.Image",
+            # "/camera/image@sensor_msgs/msg/Image[gz.msgs.Image",
+            "/camera/camera_info@sensor_msgs/msg/CameraInfo[ignition.msgs.CameraInfo",
+            "/camera/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked",
         ]
         # remappings=[
         #     ('/world/default/model/dif_bot/joint_state', '/joint_states')
