@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- ====================================================== -->
+  <!--                  GLOBAL PHYSICS TUNING                -->
+  <!-- ====================================================== -->
+
+  <gazebo>
+    <!-- Contact solver tuning (stability) -->
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+  </gazebo>
+
+
+  <!-- ====================================================== -->
+  <!--                  DRIVE WHEELS                          -->
+  <!-- ====================================================== -->
+
+  <!-- LEFT WHEEL -->
+  <gazebo reference="drivewhl_l_link">
+    <collision>
+      <surface>
+        <friction>
+          <ode>
+            <!-- High forward traction -->
+            <mu>1.2</mu>
+
+            <!-- Low lateral friction (critical for turning) -->
+            <mu2>0.2</mu2>
+
+            <!-- Optional but helpful: allows slight slip -->
+            <slip1>0.0</slip1>
+            <slip2>0.02</slip2>
+          </ode>
+        </friction>
+
+        <contact>
+          <ode>
+            <!-- Contact stiffness (prevents sinking/jitter) -->
+            <kp>1000000.0</kp>
+
+            <!-- Damping -->
+            <kd>10.0</kd>
+
+            <!-- Helps avoid interpenetration issues -->
+            <min_depth>0.001</min_depth>
+            <max_vel>0.2</max_vel>
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+  </gazebo>
+
+
+  <!-- RIGHT WHEEL -->
+  <gazebo reference="drivewhl_r_link">
+    <collision>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.2</mu>
+            <mu2>0.2</mu2>
+            <slip1>0.0</slip1>
+            <slip2>0.02</slip2>
+          </ode>
+        </friction>
+
+        <contact>
+          <ode>
+            <kp>1000000.0</kp>
+            <kd>10.0</kd>
+            <min_depth>0.001</min_depth>
+            <max_vel>0.2</max_vel>
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+  </gazebo>
+
+
+  <!-- ====================================================== -->
+  <!--                  CASTER WHEEL                          -->
+  <!-- ====================================================== -->
+
+  <gazebo reference="front_caster">
+    <collision>
+      <surface>
+        <friction>
+          <ode>
+            <!-- VERY LOW friction so it doesn't resist turning -->
+            <mu>0.01</mu>
+            <mu2>0.01</mu2>
+
+            <!-- Allow free sliding -->
+            <slip1>0.1</slip1>
+            <slip2>0.1</slip2>
+          </ode>
+        </friction>
+
+        <contact>
+          <ode>
+            <kp>100000.0</kp>
+            <kd>1.0</kd>
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+  </gazebo>
+
+
+  <!-- ====================================================== -->
+  <!--                  BASE LINK                             -->
+  <!-- ====================================================== -->
+
+  <gazebo reference="base_link">
+    <collision>
+      <surface>
+        <friction>
+          <ode>
+            <!-- Slight friction to avoid sliding -->
+            <mu>0.5</mu>
+            <mu2>0.5</mu2>
+          </ode>
+        </friction>
+
+        <contact>
+          <ode>
+            <kp>1000000.0</kp>
+            <kd>10.0</kd>
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+  </gazebo>
+
+</robot>
