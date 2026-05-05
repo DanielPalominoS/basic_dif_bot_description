@@ -6,7 +6,7 @@
     <ros2_control name="GazeboSystem" type="system">
       <hardware>
         <!-- Plugin correcto para Ignition/GZ -->
-        <plugin>gz_ros2_control/GazeboSystem</plugin>
+        <plugin>gz_ros2_control/GazeboSimSystem</plugin>
       </hardware>
 
       <!-- Joints controlados (ajusta nombres si es necesario) -->

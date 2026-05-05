@@ -20,6 +20,12 @@
   <xacro:if value="$(arg use_ros2_control)">
     <xacro:include filename="ros2_control.xacro"/>
     <xacro:ros2_control_block/>
+    <gazebo>
+      <plugin filename="gz_ros2_control-system"
+              name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+        <parameters>$(find basic_dif_bot_description)/config/diff_drive_controllers.yaml</parameters>
+      </plugin>
+    </gazebo>
   </xacro:if>
 
   <xacro:unless value="$(arg use_ros2_control)">
